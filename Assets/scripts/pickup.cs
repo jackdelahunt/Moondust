@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pickup : MonoBehaviour
 {
@@ -42,7 +43,6 @@ public class pickup : MonoBehaviour
 
             if (Physics.Raycast(transform.position, fwd, out hit, 10))
             {
-                print(hit.collider.tag);
                 if (hit.collider.tag == "Item")
                 {
 

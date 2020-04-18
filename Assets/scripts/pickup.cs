@@ -12,6 +12,7 @@ public class pickup : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         dropItem();
 
         pickupItem();
@@ -24,6 +25,8 @@ public class pickup : MonoBehaviour
             {
                 Rigidbody heldObjectRigidbody = heldObject.GetComponent<Rigidbody>();
                 heldObjectRigidbody.useGravity = true;
+                MeshCollider heldMeshCollider = heldObject.GetComponent<MeshCollider>();
+                heldMeshCollider.enabled = true;
                 heldObject = null;
             }
     }
@@ -37,6 +40,8 @@ public class pickup : MonoBehaviour
             heldObject.transform.position = hand.transform.position;
             Rigidbody heldObjectRigidbody = heldObject.GetComponent<Rigidbody>();
             heldObjectRigidbody.useGravity = false;
+            MeshCollider heldMeshCollider = heldObject.GetComponent<MeshCollider>();
+            heldMeshCollider.enabled = false;
         }
         else
         {
